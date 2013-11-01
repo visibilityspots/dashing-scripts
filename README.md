@@ -71,6 +71,6 @@ So now you have an overview of the backup jobs of the last 24hrs in your dashing
 
 Be aware I'm not a database admin nor a ruby developer so I pretty sure the queries or the ruby code could be rewritten in a more better way. If you have time I gladly accept pull requests for them :)
 
-[foursquare]: https://github.com/visibilityspots/images/foursquare.png "Foursquare dashboard"
-[bacula]: https://github.com/visibilityspots/images/bacula.png "Bacula dashboard"
+[foursquare]: https://github.com/visibilityspots/dashing-scripts/blob/master/images/foursquare.png "Foursquare dashboard"
+[bacula]: https://github.com/visibilityspots/dashing-scripts/blob/master/images/bacula.png "Bacula dashboard"
 
