@@ -10,7 +10,11 @@ Foursquare.rb
 
 The sandwich bar I buy my lunch is in the center of Ghent. Where a lot of students 'study' and need some lunch too. Because I don't want to lose time waiting in a queue I had the wonderful idea of setting up a dashing widget which show me how many people checked in on foursquare in this popular venue.
 
-I started writing a dashing job using the foursquare ruby wrapper of Matt Mueller (https://github.com/mattmueller/foursquare2). In you dashing root directory you have to add this gem into the Gemfile.
+I started writing a dashing job using the foursquare ruby wrapper of Matt Mueller (https://github.com/mattmueller/foursquare2). 
+
+![alt text][foursquare]
+
+In your dashing root directory you have to add this gem into the Gemfile.
 
 	gem 'foursquare2'
 
@@ -43,6 +47,8 @@ We have a dashing dashboard to give an overview of our infrastructure. Icinga, j
 
 So I decided to write one myself. The first idea was to scrape the bacula-web overview site and use that output in a dashing screen. Mainly because a missing API for bacula or bacula-web. Nevertheless scraping a website isn't the best idea if that layout changes your quite fucked up..
 
+![alt text][bacula]
+
 After googling around I came across an exampling of using mysql with ruby. So I decided to use this approach to have an overview of the bacula status.
 
 In you dashing root directory you have to add this gem into the Gemfile.
@@ -64,3 +70,7 @@ Next step is to insert the html code in your dashing file dashingRootDir/dashboa
 So now you have an overview of the backup jobs of the last 24hrs in your dashing setup.
 
 Be aware I'm not a database admin nor a ruby developer so I pretty sure the queries or the ruby code could be rewritten in a more better way. If you have time I gladly accept pull requests for them :)
+
+[foursquare]: https://github.com/visibilityspots/images/foursquare.png "Foursquare dashboard"
+[bacula]: https://github.com/visibilityspots/images/bacula.png "Bacula dashboard"
+
