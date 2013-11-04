@@ -6,13 +6,12 @@ SCHEDULER.every '4s' do
   # Gathering Data from MySQL database
   dbh=DBI.connect('DBI:Mysql:DBNAME:HOST','USERNAME','PASSWORD')
 
-  completed = "select count(*) as Completed from Job WHERE `EndTime` BETWEEN DATE(NOW() - INTERVAL 1 DAY) AND DATE(NOW()) AND JobStatus = 'T';"
-  failing = "select count(*) as Failed from Job WHERE `EndTime` BETWEEN DATE(NOW() - INTERVAL 1 DAY) AND DATE(NOW()) AND JobStatus IN ('f', 'E');"
-  cancelled = "select count(*) as Cancelled from Job WHERE `EndTime` BETWEEN DATE(NOW() - INTERVAL 1 DAY) AND DATE(NOW()) AND JobStatus = 'A';"
-  running = "select count(*) as Running from Job WHERE `EndTime` BETWEEN DATE(NOW() - INTERVAL 1 DAY) AND DATE(NOW()) AND JobStatus = 'R';"
-  waiting = "select count(*) as Waiting from Job WHERE `EndTime` BETWEEN DATE(NOW() - INTERVAL 1 DAY) AND DATE(NOW()) AND JobStatus IN ('F','S','M','m','s','j','c','d','t','p','C');"
- 
-   
+  completed = "select count(*) as Completed from Job WHERE `RealEndTime` >= DATE_SUB(NOW(),INTERVAL 24 HOUR) AND JobStatus = 'T';"
+  failing = "select count(*) as Failed from Job WHERE `RealEndTime` >= DATE_SUB(NOW(),INTERVAL 24 HOUR) AND DATE(NOW()) AND JobStatus IN ('f', 'E');"
+  cancelled = "select count(*) as Cancelled from Job WHERE `RealEndTime` >= DATE_SUB(NOW(),INTERVAL 24 HOUR) AND JobStatus = 'A';"
+  running = "select count(*) as Running from Job WHERE JobStatus = 'R';"
+  waiting = "select count(*) as Waiting from Job WHERE JobStatus IN ('F','S','M','m','s','j','c','d','t','p','C');"
+
   completedJobs = dbh.select_one(completed)
   completedJobs = Integer(completedJobs[0])
 
