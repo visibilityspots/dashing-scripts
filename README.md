@@ -80,3 +80,23 @@ Libraryh3lp.rb
 One of the customers I worked for is using a chat service for libraries, (libraryh3lp)[https://us.libraryh3lp.com]. Since we wanted to see that the covering group is available during working hours I created a dahing tile for it based on the (presence-api)[https://docs.libraryh3lp.com/presence-api.html].
 
 In the example there are 2 users both member of a common chat group. If one of them is online the group is online. If both are offline the group will be offline. The background color of the tile is based on the availability of the group.
+
+In the dashing root directory you need to add those gems to the Gemfile:
+
+ 	gem 'net/https'
+	gem 'uri'
+
+And install them using
+
+	$ bundle install
+
+Now copy the libraryh3lp.rb file into the jobs directory and edit the GROUP and users to your preference.
+
+Next step is to insert the html code in your dashing file dashingRootDir/dashboards/####.erb
+
+	<li data-row="2" data-col="2" data-sizex="1" data-sizey="1">
+      	  <div data-id="chat_stat" data-view="List" data-unordered="true" data-title="Chat"></div>
+          <i class="icon-info-sign icon-background"></i>
+	</li>
+
+That way you have a visual alert when the chat group goes offline.
