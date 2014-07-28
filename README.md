@@ -74,3 +74,9 @@ Be aware I'm not a database admin nor a ruby developer so I pretty sure the quer
 [foursquare]: https://raw.github.com/visibilityspots/dashing-scripts/master/images/foursquare.png "Foursquare dashboard"
 [bacula]: https://raw.github.com/visibilityspots/dashing-scripts/master/images/bacula.png "Bacula dashboard"
 
+Libraryh3lp.rb
+--------------
+
+One of the customers I worked for is using a chat service for libraries, (libraryh3lp)[https://us.libraryh3lp.com]. Since we wanted to see that the covering group is available during working hours I created a dahing tile for it based on the (presence-api)[https://docs.libraryh3lp.com/presence-api.html].
+
+In the example there are 2 users both member of a common chat group. If one of them is online the group is online. If both are offline the group will be offline. The background color of the tile is based on the availability of the group.
