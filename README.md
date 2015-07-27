@@ -12,6 +12,8 @@ The sandwich bar I buy my lunch is in the center of Ghent. Where a lot of studen
 
 I started writing a dashing job using the foursquare ruby wrapper of Matt Mueller (https://github.com/mattmueller/foursquare2).
 
+https://gist.github.com/visibilityspots/cb1a95fdb16ef662842a
+
 ![alt text][foursquare]
 
 In your dashing root directory you have to add this gem into the Gemfile.
@@ -47,6 +49,8 @@ We have a dashing dashboard to give an overview of our infrastructure. Icinga, j
 
 So I decided to write one myself. The first idea was to scrape the bacula-web overview site and use that output in a dashing screen. Mainly because a missing API for bacula or bacula-web. Nevertheless scraping a website isn't the best idea if that layout changes your quite fucked up..
 
+https://gist.github.com/visibilityspots/c28ec9f53fb2753a3c85
+
 ![alt text][bacula]
 
 After googling around I came across an exampling of using mysql with ruby. So I decided to use this approach to have an overview of the bacula status.
@@ -80,6 +84,8 @@ Libraryh3lp.rb
 One of the customers I worked for is using a chat service for libraries, https://us.libraryh3lp.com. Since we wanted to see that the covering group is available during working hours I created a dahing tile for it based on the presence-api: https://docs.libraryh3lp.com/presence-api.html.
 
 In the example there are 2 users both member of a common chat group. If one of them is online the group is online. If both are offline the group will be offline. The background color of the tile is based on the availability of the group.
+
+https://gist.github.com/visibilityspots/ae32dc897e83980e16f6
 
 In the dashing root directory you need to add those gems to the Gemfile:
 
